@@ -1,19 +1,21 @@
 #include <iostream>
 using namespace std;
-// <문제> 1이 될 때까지
+
 int main() {
+	cin.tie(0);
+	ios::sync_with_stdio(0);
 	int N, K;
+	
 	cin >> N >> K;
-	int count = 0;
+	int ans = 0;
 	while (N != 1) {
+		ans++;
 		if (N % K == 0) {
-			N = N / K;
-			count++;
+			N /= K;
 		}
 		else {
 			N--;
-			count++;
 		}
 	}
-	cout << count << endl;
+	cout << ans << "\n";
 }
